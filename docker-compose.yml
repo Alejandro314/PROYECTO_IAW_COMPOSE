@@ -1,0 +1,26 @@
+version: "2.0"
+ 
+services:
+  gbd:
+    env_file:
+      - web-variables.env
+    hostname: gbd
+    build: ./GBD
+    image: gbd
+    command: sh /usr/bin/inicioservicio.sh 
+    restart: always
+    ports:
+      - "4040:3306"
+
+  web:
+    depends_on: 
+      - gbd
+    env_file:
+      - web-variables.env
+    hostname: web
+    build: ./WEB
+    command: sh /usr/bin/inicioservicio.sh
+    image: web
+    restart: always
+    ports:
+      - "8080:80"
