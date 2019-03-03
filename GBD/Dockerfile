@@ -9,7 +9,7 @@ ENV contra_2=890iopklñ
 ENV gbd=alebuntu
 ENV user_1=root
 ENV user_2=condoriano
-ENV MYSQL_ROOT_PASSWORD=contrasena
+
 
 RUN apt-get -y update
 RUN echo "START"

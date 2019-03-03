@@ -5,6 +5,8 @@ services:
     hostname: gbd
     build: ./GBD
     restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
     ports:
       - "4040:3306"
 
