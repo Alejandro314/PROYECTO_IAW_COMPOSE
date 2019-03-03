@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM php:7-apache
 MAINTAINER Alejandro Román Caballero
 
 ENV host=localhost
@@ -8,15 +8,9 @@ ENV gbd=alebuntu
 ENV user_1=root
 ENV user_2=condoriano
 
-RUN apt update && apt -y install apache2 && apt -y install net-tools
-#Instalacion php
-RUN apt-get install -y php
-RUN apt-get install -y wget zip
-RUN apt-get install -y php-pgsql
-RUN apt-get install -y php7.0-bcmath
-RUN apt-get install -y php7.0-gmp
-RUN apt-get install -y php-curl
-RUN apt-get install -y libapache2-mod-php php-mcrypt php-mysql
+RUN apt-get update
+#RUN apt-get -y install apache2 
+#RUN apt-get -y install net-tools
 
 RUN echo "START"
 
@@ -36,8 +30,8 @@ EXPOSE 80/tcp
 RUN sh -c 'echo Europe/Madrid >/etc/timezone && dpkg-reconfigure -f noninteractive tzdata'
 #Iniciar sevicios
 ADD 000-default.conf /etc/apache2/sites-available/
-ADD inicioservicio.sh /usr/bin/
-RUN chmod 755 /usr/bin/inicioservicio.sh
+#ADD inicioservicio.sh /usr/bin/
+#RUN chmod 755 /usr/bin/inicioservicio.sh
 #CMD /usr/bin/inicioservicio.sh
 
 
