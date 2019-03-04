@@ -10,6 +10,7 @@ sed -i 's/alebuntu/'"$gbd"'/g' /usr/bin/carga.sql
 
 
 
-#mysql -u root -pcontrasena < /usr/bin/carga.sql
+mysql -u root -pexample < /usr/bin/carga.sql
 
 
+/bin/bash

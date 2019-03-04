@@ -2,7 +2,7 @@ FROM mysql:5.7
 MAINTAINER Alejandro Roman Caballero
 
 
-
+ENV MYSQL_ROOT_PASSWORD=example
 ENV host=localhost
 ENV contra_1=asdqwe123
 ENV contra_2=890iopklñ

@@ -12,6 +12,9 @@ RUN apt-get update
 #RUN apt-get -y install apache2 
 #RUN apt-get -y install net-tools
 
+RUN apt-get -y install mysql-client
+#RUN apt-get -y install php-mysql
+
 RUN echo "START"
 
 RUN apt-get install -y git
